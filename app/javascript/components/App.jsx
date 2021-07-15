@@ -1,4 +1,17 @@
-import React from "react";
-import Routes from "../routes/Index";
+import React from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import Parks from './Parks/Parks'
+import Park from './Park/Park'
 
-export default props => <>{Routes}</>;
+const App = () => {
+  return (
+    <Router forceRefresh={true}>
+      <Switch>
+        <Route exact path="/parks" component={Parks}/>
+        <Route exact path="/parks/:id" component={Park}/>
+      </Switch>
+    </Router>
+  )
+}
+
+export default App
